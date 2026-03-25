@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import Image from 'next/image'
 import Link from 'next/link'
+import Navbar from './components/Navbar'
 import './globals.css'
 
 const siteUrl = 'https://www.bloombergflowers.com'
@@ -195,23 +196,7 @@ export default function RootLayout({
         />
       </head>
       <body>
-        <nav id="navbar">
-          <div className="container nav-inner">
-            <Link href="/" className="nav-logo">
-              <Image src="/assets/logo-files/header2.png" alt="BloomBerg Flowers" width={180} height={50} style={{ objectFit: 'contain', height: 'auto' }} />
-            </Link>
-            <ul className="nav-links">
-              <li><a href="/gallery" className="nav-green">Gallery</a></li>
-              <li><a href="/#services" className="nav-green">Services</a></li>
-              <li><a href="/#about" className="nav-green">About</a></li>
-              <li><a href="/#contact" className="nav-green">Contact</a></li>
-            </ul>
-            <a href="/#contact" className="nav-insta">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M4 4h16v16H4z"/><path d="M8 12a4 4 0 1 0 8 0 4 4 0 0 0-8 0zM20 4v16"/></svg>
-              Message Us
-            </a>
-          </div>
-        </nav>
+        <Navbar />
         {children}
         <footer>
           <div className="footer-inner">
