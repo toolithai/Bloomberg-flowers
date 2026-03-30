@@ -125,11 +125,11 @@ function FloatingContact() {
 
 // ─── Main Page ───────────────────────────────────────────────────────────────
 const services = [
-  { title: 'Custom Arrangements', desc: 'One-of-a-kind bouquets built around your vision. No cookie-cutter designs — every piece is crafted for you.', link: '/gallery/custom', img: '/assets/bouquet/IMG_4142.jpeg' },
+  { title: 'Bouquets', desc: 'One-of-a-kind bouquets built around your vision. No cookie-cutter designs — every piece is crafted for you.', link: '/gallery/bouquets', img: '/assets/bouquet/IMG_4142.jpeg' },
   { title: 'Centerpieces', desc: 'Statement table arrangements for events, holidays, and everyday elegance.', link: '/gallery/centerpieces', img: '/assets/centerpiece/IMG_6684.jpeg' },
-  { title: 'Celebratory Bouquets', desc: 'Birthdays, anniversaries, just because — big, bold bouquets for all of life\'s moments.', link: '/gallery/byo', img: '/assets/bouquets-with-people/DSC_4162.JPG' },
+  { title: 'Special Occasions', desc: 'Birthdays, anniversaries, just because — big, bold bouquets for all of life\'s moments.', link: '/gallery/special-occasions', img: '/assets/bouquets-with-people/DSC_4162.JPG' },
   { title: 'Workshops', desc: 'Hands-on floral design classes for adults and kids. Great for groups, parties, or just because.', link: '/gallery/workshops', img: '/assets/flower-party/DSC_3881.jpg' },
-  { title: 'Events', desc: 'Circus, non-profits, sports, holidays — whatever the occasion, we bring the blooms.', link: '/gallery/events', img: '/assets/events/IMG_9354.jpeg' },
+  { title: 'Events', desc: 'Circus, non-profits, sports, holidays — whatever the occasion, we bring the blooms.', link: '/gallery/events', img: '/assets/events/IMG_9363.jpeg' },
 ]
 
 export default function Home() {
