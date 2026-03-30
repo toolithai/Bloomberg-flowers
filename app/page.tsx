@@ -160,14 +160,13 @@ export default function Home() {
       <section className="how-it-works-section">
         <div className="how-it-works-inner">
           <div className="how-header" data-animate>
-            <h2>How It <span>Works</span></h2>
+            <h2>Our <span>Process</span></h2>
             <p>Every bouquet, every centerpiece, every event piece — made for you. No templates.</p>
           </div>
           <div className="how-steps">
             {steps.map((step, i) => (
               <div key={i} className="how-step" data-animate style={{ transitionDelay: `${i * 100}ms` }}>
                 <div className="how-step-icon">{step.icon}</div>
-                <div className="how-step-num">{step.num}</div>
                 <h3>{step.title}</h3>
                 <p>{step.desc}</p>
               </div>
@@ -205,7 +204,7 @@ export default function Home() {
         <div className="testimonials-inner">
           <div className="testimonials-header" data-animate>
             <h2>What People <span>Say</span></h2>
-            <p>Real moments, real flowers, real stories.</p>
+            <p>Real flowers, real stories, real moments.</p>
           </div>
           <div className="testimonials-grid">
             {testimonials.map((t, i) => (
@@ -238,13 +237,10 @@ export default function Home() {
             <p>
               My style? Modern, fun, and always a little unexpected. I don&apos;t do cookie-cutter. Every arrangement is built around you — your vibe, your story, your moment.
             </p>
-            <div className="back-of-card">
-              <Image src="/assets/logo-files/unnamed.png" alt="Flowers by Jessie" width={120} height={120} style={{ objectFit: 'contain' }} />
-            </div>
             <div className="about-details">
               <div className="about-detail">
                 <div className="icon">📍</div>
-                <span>1991 Main Street, Sarasota, FL 34236</span>
+                <span>Downtown Sarasota, By Appointment</span>
               </div>
               <div className="about-detail">
                 <div className="icon">📞</div>
@@ -294,7 +290,7 @@ export default function Home() {
             </div>
             <div className="contact-card">
               <h4>Location</h4>
-              <p>1991 Main Street<br />Sarasota, FL 34236</p>
+              <p>Downtown Sarasota<br />By Appointment</p>
             </div>
             <div className="contact-card">
               <h4>Hours</h4>

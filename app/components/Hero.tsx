@@ -113,12 +113,12 @@ export default function Hero() {
       <div className="hero-content">
         <p className={`hero-eyebrow ${mounted ? 'visible' : ''}`}>{s.eyebrow}</p>
         <h1 className={`hero-title ${mounted ? 'visible' : ''}`}>
-          <span className="hero-line">{s.headline}</span>
+          <span className="hero-line" key={current}>{s.headline}</span>
           <span className="hero-accent">{s.accent}</span>
         </h1>
-        <p className={`hero-subtitle ${mounted ? 'visible' : ''}`}>{s.sub}</p>
+        <p className={`hero-subtitle visible`} key={current}>{s.sub}</p>
         <div className={`hero-actions ${mounted ? 'visible' : ''}`}>
-          <a href="/gallery/custom" className="btn-primary">
+          <a href="/#services" className="btn-primary">
             See Our Work
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
           </a>
@@ -135,17 +135,6 @@ export default function Hero() {
             aria-label={`Go to slide ${i + 1}`}
           />
         ))}
-      </div>
-
-      <div className="hero-counter">
-        <span className="counter-current">{String(current + 1).padStart(2, '0')}</span>
-        <span className="counter-sep">/</span>
-        <span className="counter-total">{String(slides.length).padStart(2, '0')}</span>
-      </div>
-
-      <div className="hero-scroll">
-        <span>Scroll</span>
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M12 5v14M5 12l7 7 7-7"/></svg>
       </div>
     </section>
   )

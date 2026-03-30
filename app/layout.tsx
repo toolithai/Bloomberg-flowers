@@ -89,7 +89,7 @@ export default function RootLayout({
     email: 'jessie@bloombergflowers.com',
     address: {
       '@type': 'PostalAddress',
-      streetAddress: '1991 Main Street',
+      streetAddress: 'Downtown Sarasota',
       addressLocality: 'Sarasota',
       addressRegion: 'FL',
       postalCode: '34236',
@@ -222,7 +222,7 @@ export default function RootLayout({
               <ul>
                 <li><a href="tel:+19414245880">(941) 424-5880</a></li>
                 <li><a href="mailto:jessie@bloombergflowers.com">jessie@bloombergflowers.com</a></li>
-                <li>1991 Main Street<br />Sarasota, FL 34236</li>
+                <li>Downtown Sarasota, FL<br />By Appointment</li>
               </ul>
               <h5 style={{ marginTop: '24px' }}>Hours</h5>
               <ul>
