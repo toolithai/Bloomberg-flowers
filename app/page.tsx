@@ -156,25 +156,6 @@ export default function Home() {
         </div>
       </div>
 
-      {/* How It Works */}
-      <section className="how-it-works-section">
-        <div className="how-it-works-inner">
-          <div className="how-header" data-animate>
-            <h2>Our <span>Process</span></h2>
-            <p>Every bouquet, every centerpiece, every event piece — made for you. No templates.</p>
-          </div>
-          <div className="how-steps">
-            {steps.map((step, i) => (
-              <div key={i} className="how-step" data-animate style={{ transitionDelay: `${i * 100}ms` }}>
-                <div className="how-step-icon">{step.icon}</div>
-                <h3>{step.title}</h3>
-                <p>{step.desc}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* What We Do */}
       <section id="services" className="services-section">
         <div className="services-inner">
@@ -193,6 +174,25 @@ export default function Home() {
                     <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
                   </a>
                 </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Our Process */}
+      <section className="how-it-works-section">
+        <div className="how-it-works-inner">
+          <div className="how-header" data-animate>
+            <h2>Our <span>Process</span></h2>
+            <p>Every bouquet, every centerpiece, every event piece — made for you. No templates.</p>
+          </div>
+          <div className="how-steps">
+            {steps.map((step, i) => (
+              <div key={i} className="how-step" data-animate style={{ transitionDelay: `${i * 100}ms` }}>
+                <div className="how-step-icon">{step.icon}</div>
+                <h3>{step.title}</h3>
+                <p>{step.desc}</p>
               </div>
             ))}
           </div>
