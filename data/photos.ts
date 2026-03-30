@@ -51,12 +51,12 @@ export const centerpieces: PhotoItem[] = [
   { src: '/assets/centerpiece/IMG_4038.jpeg',  filename: 'IMG 4038',  ref: 'CP113' },
   { src: '/assets/centerpiece/IMG_6392.jpeg',  filename: 'IMG 6392',  ref: 'CP114' },
   { src: '/assets/centerpiece/IMG_6555.jpeg',  filename: 'IMG 6555',  ref: 'CP115' },
-  { src: '/assets/centerpiece/IMG_6684.jpeg',  filename: 'IMG 6684',  ref: 'CP116' },
-  { src: '/assets/centerpiece/IMG_6730.jpeg',  filename: 'IMG 6730',  ref: 'CP117' },
-  { src: '/assets/centerpiece/IMG_7131.jpeg',  filename: 'IMG 7131',  ref: 'CP118' },
-  { src: '/assets/centerpiece/IMG_7965.jpeg',  filename: 'IMG 7965',  ref: 'CP119' },
-  { src: '/assets/centerpiece/IMG_8221.jpeg',  filename: 'IMG 8221',  ref: 'CP120' },
-  { src: '/assets/centerpiece/IMG_9791.jpeg',  filename: 'IMG 9791',  ref: 'CP121' },
+  { src: '/assets/centerpiece/IMG_6730.jpeg',  filename: 'IMG 6730',  ref: 'CP116' },
+  { src: '/assets/centerpiece/IMG_7131.jpeg',  filename: 'IMG 7131',  ref: 'CP117' },
+  { src: '/assets/centerpiece/IMG_7965.jpeg',  filename: 'IMG 7965',  ref: 'CP118' },
+  { src: '/assets/centerpiece/IMG_8221.jpeg',  filename: 'IMG 8221',  ref: 'CP119' },
+  { src: '/assets/centerpiece/IMG_9791.jpeg',  filename: 'IMG 9791',  ref: 'CP120' },
+  // IMG_6684.jpeg removed (duplicate of CP100)
   // flower jess.jpg removed (Jessie photo, not a centerpiece)
 ]
 
@@ -111,17 +111,25 @@ export const allPhotos: PhotoItem[] = [
 
 export type PhotoWithCategory = typeof allPhotos[number] & { category: string }
 
+// Helper: find a photo by its ref code
+const byRef = (ref: string) => {
+  const all = [...bouquets, ...bouquetsWithPeople, ...centerpieces, ...events, ...workshops]
+  const found = all.find(p => p.ref === ref)
+  if (!found) console.warn(`photo not found: ${ref}`)
+  return found
+}
+
 // --- JESSIE'S FAVORITES (8 photos — Jessie to finalize) ---
-// Placeholder: picks from each category
+// Uses ref codes so removes don't break the list
 export const jessiesFavorites: PhotoItem[] = [
-  bouquets[0],
-  bouquets[7],
-  bouquetsWithPeople[4],
-  centerpieces[1],
-  centerpieces[17],
-  workshops[4],
-  workshops[5],
-  events[6],
+  byRef('BQ100')!,
+  byRef('BQ107')!,
+  byRef('BQ204')!,
+  byRef('CP101')!,
+  byRef('CP116')!,
+  byRef('WP104')!,
+  byRef('WP105')!,
+  byRef('EP106')!,
 ]
 
 // --- GALLERY PAGE CATEGORIES ---
