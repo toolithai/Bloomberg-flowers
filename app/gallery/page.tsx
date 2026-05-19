@@ -1,13 +1,25 @@
 'use client'
 
 import { useState, useEffect, useCallback } from 'react'
+import { useSearchParams } from 'next/navigation'
 import Link from 'next/link'
 import Image from 'next/image'
 import { galleryCategories, type PhotoItem } from '@/data/photos'
 
 export default function Gallery() {
-  const [active, setActive] = useState(galleryCategories[0].id)
+  const searchParams = useSearchParams()
+  const categoryParam = searchParams.get('category')
+  const initialCategory = galleryCategories.find(c => c.id === categoryParam)?.id ?? galleryCategories[0].id
+
+  const [active, setActive] = useState(initialCategory)
   const [lightbox, setLightbox] = useState<{ photo: PhotoItem; index: number } | null>(null)
+
+  // Sync if URL param changes (e.g. browser back/forward)
+  useEffect(() => {
+    const cat = searchParams.get('category')
+    const match = galleryCategories.find(c => c.id === cat)
+    if (match) setActive(match.id)
+  }, [searchParams])
 
   const activeCategory = galleryCategories.find(c => c.id === active)!
   const photos = activeCategory.photos

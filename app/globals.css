@@ -243,7 +243,7 @@ nav {
   position: absolute;
   inset: -5%;
   background-size: cover;
-  background-position: center;
+  background-position: center 25%;
   transform-origin: center;
   opacity: 0;
   transition: opacity 1.2s ease-in-out;
@@ -256,7 +256,7 @@ nav {
 
 @keyframes kenBurnsActive {
   from { transform: scale(1) translate(0, 0); }
-  to { transform: scale(1.07) translate(-1%, -1%); }
+  to { transform: scale(1.07) translate(-1%, 0.5%); }
 }
 
 .hero-overlay {
@@ -1996,3 +1996,199 @@ footer {
 
 /* ===== GALLERY ITEM — hide dev labels ===== */
 .gallery-item-label { display: none; }
+
+/* ================================================================
+   COMPREHENSIVE MOBILE OPTIMIZATIONS
+   ================================================================ */
+
+/* ── Global: tighter container padding on small screens ── */
+@media (max-width: 600px) {
+  .container { padding: 0 16px; }
+}
+
+/* ── Hero ─────────────────────────────────────────────────────── */
+@media (max-width: 768px) {
+  .hero-content {
+    padding: 0 24px;
+    text-align: center;
+    align-items: center;
+  }
+  .hero-actions {
+    flex-direction: column;
+    gap: 12px;
+    width: 100%;
+    align-items: center;
+  }
+  .hero-actions .btn-primary,
+  .hero-actions .btn-outline {
+    width: 100%;
+    max-width: 280px;
+    justify-content: center;
+    padding: 16px 24px;
+  }
+  .hero-dots {
+    bottom: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-content { padding: 0 16px; }
+  .hero-eyebrow { font-size: 0.75rem; letter-spacing: 0.12em; }
+}
+
+/* ── Marquee ──────────────────────────────────────────────────── */
+@media (max-width: 480px) {
+  .marquee-item { font-size: 0.9rem; gap: 32px; }
+  .marquee-track { gap: 32px; }
+}
+
+/* ── Services / What We Do ────────────────────────────────────── */
+@media (max-width: 768px) {
+  .services-section { padding: 72px 20px; }
+  .services-header { margin-bottom: 40px; }
+  .services-header p { font-size: 1rem; }
+  .services-grid { gap: 12px; }
+}
+
+@media (max-width: 480px) {
+  .services-section { padding: 56px 16px; }
+  .service-card { min-height: 200px; }
+  .service-card-overlay h3 { font-size: 1.1rem; }
+  .service-card-overlay p { font-size: 0.82rem; display: none; }
+  .service-card-overlay { padding: 16px; }
+}
+
+/* ── Our Process ──────────────────────────────────────────────── */
+@media (max-width: 768px) {
+  .how-section { padding: 72px 20px; }
+}
+@media (max-width: 480px) {
+  .how-section { padding: 56px 16px; }
+  .how-step { padding: 28px 20px; }
+}
+
+/* ── Testimonials ─────────────────────────────────────────────── */
+@media (max-width: 768px) {
+  .testimonials-section { padding: 72px 20px; }
+  .testimonials-carousel { padding: 0; }
+}
+@media (max-width: 480px) {
+  .testimonials-section { padding: 56px 16px; }
+  .testimonial-slide { padding: 28px 16px 20px; min-height: 0; }
+  .testimonial-slide-quote { font-size: 0.92rem; }
+  .carousel-controls { gap: 10px; margin-top: 16px; }
+}
+
+/* ── About / Hi I'm Jessie ────────────────────────────────────── */
+@media (max-width: 768px) {
+  .about-section { padding: 72px 20px; }
+  .about-text h2 { font-size: clamp(2rem, 6vw, 2.8rem); }
+  .about-text p { font-size: 0.95rem; }
+}
+@media (max-width: 480px) {
+  .about-section { padding: 56px 16px; }
+  .about-details { gap: 14px; margin-top: 24px; }
+  .about-detail { font-size: 0.88rem; }
+  .about-detail .icon { width: 36px; height: 36px; font-size: 1rem; }
+}
+
+/* ── Instagram Section ────────────────────────────────────────── */
+@media (max-width: 768px) {
+  .instagram-section { padding: 60px 0; }
+  .instagram-inner { padding: 0 20px; }
+  .instagram-header h2 { font-size: clamp(1.6rem, 5vw, 2.2rem); }
+}
+@media (max-width: 480px) {
+  .instagram-section { padding: 48px 0; }
+  .instagram-inner { padding: 0 16px; }
+  .instagram-grid { gap: 6px; }
+}
+
+/* ── CTA Banner ───────────────────────────────────────────────── */
+@media (max-width: 768px) {
+  .cta-banner { padding: 60px 20px; }
+  .cta-banner p { font-size: 1rem; }
+}
+@media (max-width: 480px) {
+  .cta-banner { padding: 48px 16px; }
+  .cta-banner .btn-dark { padding: 14px 28px; font-size: 0.88rem; }
+}
+
+/* ── Contact Section ──────────────────────────────────────────── */
+@media (max-width: 768px) {
+  .contact-section { padding: 72px 20px; }
+}
+@media (max-width: 480px) {
+  .contact-section { padding: 56px 16px; }
+  .contact-form-col { padding: 20px 16px; border-radius: 16px; }
+  .form-submit { width: 100%; padding: 16px; }
+  .contact-social-links { gap: 8px; }
+}
+
+/* ── Gallery Page ─────────────────────────────────────────────── */
+@media (max-width: 768px) {
+  .gallery-page-header { padding: 100px 20px 32px; }
+  .gallery-page-header h1 { font-size: clamp(2rem, 8vw, 3rem); }
+  .gallery-tabs {
+    overflow-x: auto;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    padding: 0 16px 12px;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+  .gallery-tabs::-webkit-scrollbar { display: none; }
+  .gallery-tab { flex-shrink: 0; font-size: 0.8rem; padding: 8px 16px; }
+  .gallery-page-grid { padding: 0 16px 60px; gap: 8px; grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 480px) {
+  .gallery-page-header { padding: 90px 16px 24px; }
+  .gallery-page-grid { grid-template-columns: repeat(2, 1fr); gap: 6px; }
+  .gallery-item { min-height: 140px; }
+}
+
+/* ── Lightbox on mobile ───────────────────────────────────────── */
+@media (max-width: 600px) {
+  .lightbox-arrow { width: 40px; height: 40px; }
+  .lightbox-arrow svg { width: 18px; height: 18px; }
+  .lightbox-counter { font-size: 0.75rem; padding: 4px 12px; }
+  .lightbox-close { font-size: 1.2rem; top: 10px; right: 10px; }
+}
+
+/* ── Nav & Mobile Menu ────────────────────────────────────────── */
+@media (max-width: 768px) {
+  .nav-inner { padding: 0 16px; }
+}
+
+/* ── Footer ───────────────────────────────────────────────────── */
+@media (max-width: 768px) {
+  .footer { padding: 60px 20px 32px; }
+  .footer-inner { padding: 0; }
+}
+@media (max-width: 480px) {
+  .footer { padding: 48px 16px 24px; }
+  .footer-brand p { font-size: 0.88rem; }
+}
+
+/* ── Popup / Seasonal Banner ──────────────────────────────────── */
+@media (max-width: 480px) {
+  .seasonal-popup { padding: 28px 20px; border-radius: 16px; }
+  .seasonal-popup h2 { font-size: 1.4rem; }
+}
+
+/* ── Typography global tightening on mobile ───────────────────── */
+@media (max-width: 480px) {
+  h2 { line-height: 1.2; }
+  .section-label {
+    font-size: 0.7rem;
+    letter-spacing: 0.1em;
+  }
+}
+
+/* ── Touch-friendly tap targets ───────────────────────────────── */
+@media (max-width: 768px) {
+  .carousel-arrow { width: 44px; height: 44px; }
+  .hero-dot { width: 10px; height: 10px; }
+  .hero-dot.active { width: 28px; border-radius: 5px; }
+  .gallery-tab { min-height: 40px; }
+}
