@@ -115,7 +115,7 @@ const testimonials = [
     occasion: 'Flower Arranging Sessions',
   },
   {
-    quote: "Jessie's flower arranging classes have been one of the most enriching and rewarding experiences I've had over the past two years. From the moment you step into her world, you're met with a sense of warmth, creativity, and effortless elegance that defines every session. Jessie has an extraordinary eye for detail and an innate ability to guide and inspire, transforming each arrangement into something truly refined and beautiful. Beyond the artistry, what makes this experience exceptional is the sense of connection she cultivates. The classes have become a space for meaningful relationships, where like-minded people come together and leave as lasting friends. It's a rare blend of creativity, community, and elevated experience—I couldn't recommend Jessie's classes more highly.",
+    quote: "Jessie's flower arranging classes have been one of the most enriching experiences I've had over the past two years. From the moment you step into her world, you're met with warmth, creativity, and effortless elegance. Jessie has an extraordinary eye for detail and a natural ability to inspire, guiding you to create arrangements that feel polished, sophisticated, and magazine-worthy. Beyond the artistry, she cultivates a genuine sense of community — where like-minded people come together and leave as lasting friends. A rare blend of creativity, connection, and elevated experience. I couldn't recommend her classes more highly.",
     author: 'Ilana',
     occasion: 'Flower Arranging Classes',
   },
