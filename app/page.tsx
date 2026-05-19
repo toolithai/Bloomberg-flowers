@@ -37,21 +37,26 @@ function SeasonalBanner() {
     }
   }, [])
 
+  const dismiss = () => {
+    setVisible(false)
+    sessionStorage.setItem('seasonal-banner-dismissed', '1')
+  }
+
   if (!visible) return null
 
   return (
-    <div className="seasonal-popup-overlay" onClick={() => { setVisible(false); sessionStorage.setItem('seasonal-banner-dismissed', '1') }}>
+    <div className="seasonal-popup-overlay" onClick={dismiss}>
       <div className="seasonal-popup" onClick={e => e.stopPropagation()}>
-        <button className="seasonal-popup-close" onClick={() => { setVisible(false); sessionStorage.setItem('seasonal-banner-dismissed', '1') }} aria-label="Dismiss">
+        <button className="seasonal-popup-close" onClick={dismiss} aria-label="Dismiss">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"><path d="M18 6L6 18M6 6l12 12"/></svg>
         </button>
         <div className="seasonal-popup-emoji">🌸</div>
         <h3>Spring Arrangements Available Now</h3>
         <p>Custom florals, BYOB workshops, and event florals — reach out to create something beautiful.</p>
-        <button className="seasonal-popup-cta" onClick={() => { setVisible(false); sessionStorage.setItem('seasonal-banner-dismissed', '1') }}>
+        <a href="#contact" className="seasonal-popup-cta" onClick={dismiss}>
           Get in Touch
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-        </button>
+        </a>
       </div>
     </div>
   )
@@ -60,9 +65,8 @@ function SeasonalBanner() {
 // ─── How It Works ────────────────────────────────────────────────────────────
 const steps = [
   {
-    num: '01',
     title: 'Share Your Vision',
-    desc: 'Tell us what you\'re imagining — the occasion, colors, mood, or just a feeling. Even a rough idea gets us started.',
+    desc: "Tell us what you're imagining — the occasion, colors, mood, or just a feeling. Even a rough idea gets us started.",
     icon: (
       <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8">
         <path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/>
@@ -70,9 +74,8 @@ const steps = [
     ),
   },
   {
-    num: '02',
     title: 'We Create for You',
-    desc: 'Every piece is built from scratch — no stock arrangements, no shortcuts. Jessie picks the freshest blooms and designs around you.',
+    desc: "Every piece is built from scratch — no stock arrangements, no shortcuts. Jessie picks the freshest blooms and designs around you.",
     icon: (
       <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8">
         <path d="M12 2a7 7 0 017 7c0 2.38-1.19 4.47-3 5.74V17a2 2 0 01-2 2h-4a2 2 0 01-2-2v-2.26C6.19 13.47 5 11.38 5 9a7 7 0 017-7z"/>
@@ -81,9 +84,8 @@ const steps = [
     ),
   },
   {
-    num: '03',
     title: 'Enjoy',
-    desc: 'Your arrangement delivered, picked up, or ready for your event. Exactly what you envisioned — only better.',
+    desc: "Your arrangement delivered, picked up, or ready for your event. Exactly what you envisioned — only better.",
     icon: (
       <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8">
         <path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/>
@@ -95,31 +97,197 @@ const steps = [
 // ─── Testimonials ────────────────────────────────────────────────────────────
 const testimonials = [
   {
-    quote: 'We had the pleasure of working with Jessie for two large scale events, and she was absolutely wonderful to work with. From start to finish, she made the entire process easy and seamless. The centerpiece and bouquets she created were beautiful and truly elevated the look and feel of both events. I highly recommend her and look forward to working with her again in the future.',
+    quote: 'Jessie was wonderful to work with for two large-scale events. From start to finish she made the process easy and seamless. The centerpieces and bouquets were beautiful and truly elevated both events. I highly recommend her and look forward to working with her again.',
     author: 'Megan B.',
     occasion: 'Large Scale Events',
   },
   {
-    quote: "Jessie's work consistently goes above and beyond, creating beautiful, meaningful pieces for every occasion. She is professional, caring, always on time, and incredibly accommodating when it comes to dates and custom requests. I'm truly appreciative of everything Jessie has created for us—her work has represented our events beautifully every time.",
+    quote: "Jessie's work consistently goes above and beyond. She is professional, caring, always on time, and incredibly accommodating with custom requests. Her work has represented our events beautifully every time — I'm truly appreciative of everything she's created for us.",
     author: 'Angel H.',
     occasion: 'Custom Requests',
   },
   {
-    quote: 'Jessie was so easy to work with! She made beautiful custom arrangements which perfectly coordinated with my table size, linens, and style. Her flowers lasted an extremely long time, even though we used them on an outdoor patio. I received lots of compliments on her arrangements and I would highly recommend her!',
+    quote: 'Jessie was so easy to work with! She made beautiful custom arrangements that perfectly coordinated with my table, linens, and style. Her flowers lasted an extremely long time — even on an outdoor patio. I received so many compliments and would highly recommend her!',
     author: 'Jennifer K.',
     occasion: 'Custom Arrangements',
   },
   {
-    quote: "Jessie's flower-arranging sessions were always something special. She created the warmest, most inviting space — where creativity felt effortless and everyone, regardless of skill level, felt welcome. With patience, joy, and genuine inspiration, she made every visit unforgettable. What made it truly magical was the creativity without limits. We didn't just make bouquets — we made art. Arrangements in watermelons, pumpkins, cowboy hats, and teapots. Designs built with succulents, orchids, spices, and whatever else Jessie dreamed up. Every project was unique, fun, and full of personality.",
+    quote: "Jessie's flower-arranging sessions were always something special. She created the warmest, most inviting space — where creativity felt effortless and everyone felt welcome. With patience, joy, and genuine inspiration, she made every visit unforgettable. We didn't just make bouquets — we made art.",
     author: 'Silvia P.',
     occasion: 'Flower Arranging Sessions',
   },
   {
-    quote: "Jessie's flower arranging classes have been one of the most enriching experiences I've had over the past two years. From the moment you step into her world, you're met with warmth, creativity, and effortless elegance. Jessie has an extraordinary eye for detail and a natural ability to inspire, guiding you to create arrangements that feel polished, sophisticated, and magazine-worthy. Beyond the artistry, she cultivates a genuine sense of community — where like-minded people come together and leave as lasting friends. A rare blend of creativity, connection, and elevated experience. I couldn't recommend her classes more highly.",
+    quote: "Jessie's flower arranging classes have been one of the most enriching experiences I've had over the past two years. From the moment you step into her world, you're met with warmth, creativity, and effortless elegance. A rare blend of creativity, connection, and elevated experience. I couldn't recommend her more highly.",
     author: 'Ilana',
     occasion: 'Flower Arranging Classes',
   },
 ]
+
+// ─── Testimonials Carousel ───────────────────────────────────────────────────
+function TestimonialsCarousel() {
+  const [current, setCurrent] = useState(0)
+  const [animating, setAnimating] = useState(false)
+  const timerRef = useRef<ReturnType<typeof setTimeout> | null>(null)
+
+  const goTo = (idx: number) => {
+    if (animating) return
+    setAnimating(true)
+    setTimeout(() => {
+      setCurrent((idx + testimonials.length) % testimonials.length)
+      setAnimating(false)
+    }, 250)
+  }
+
+  useEffect(() => {
+    timerRef.current = setTimeout(() => goTo(current + 1), 6000)
+    return () => { if (timerRef.current) clearTimeout(timerRef.current) }
+  }, [current]) // eslint-disable-line react-hooks/exhaustive-deps
+
+  const t = testimonials[current]
+
+  return (
+    <div className="testimonials-carousel" data-animate>
+      <div className={`testimonial-slide${animating ? ' fading' : ''}`}>
+        <svg className="quote-icon" width="40" height="40" viewBox="0 0 24 24" fill="var(--green)" opacity="0.3">
+          <path d="M3 21c3 0 7-1 7-8V5c0-1.25-.756-2.017-2-2H4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2 1 0 1 0 1 1v1c0 1-1 2-2 2s-1 .008-1 1.031V20c0 1 0 1 1 1z"/>
+          <path d="M15 21c3 0 7-1 7-8V5c0-1.25-.757-2.017-2-2h-4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2h.75c0 2.25.25 4-2.75 4v3c0 1 0 1 1 1z"/>
+        </svg>
+        <p className="testimonial-slide-quote">{t.quote}</p>
+        <div className="testimonial-slide-author">
+          <span className="testimonial-name">{t.author}</span>
+          <span className="testimonial-occasion">{t.occasion}</span>
+        </div>
+      </div>
+      <div className="carousel-controls">
+        <button className="carousel-arrow" onClick={() => goTo(current - 1)} aria-label="Previous">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"><path d="M15 18l-6-6 6-6"/></svg>
+        </button>
+        <div className="carousel-dots">
+          {testimonials.map((_, i) => (
+            <button key={i} className={`carousel-dot${i === current ? ' active' : ''}`} onClick={() => goTo(i)} aria-label={`Testimonial ${i + 1}`} />
+          ))}
+        </div>
+        <button className="carousel-arrow" onClick={() => goTo(current + 1)} aria-label="Next">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"><path d="M9 18l6-6-6-6"/></svg>
+        </button>
+      </div>
+    </div>
+  )
+}
+
+// ─── Instagram Section ───────────────────────────────────────────────────────
+const instaPhotos = [
+  '/assets/centerpiece/12df46d1-a3a0-4f5f-8b78-9a9be57cda44.jpeg',
+  '/assets/bouquet/IMG_2751.jpeg',
+  '/assets/centerpiece/IMG_3723.jpeg',
+  '/assets/bouquets-with-people/DSC_4162.JPG',
+  '/assets/centerpiece/IMG_6730.jpeg',
+  '/assets/flower-party/DSC_3881.jpg',
+]
+
+function InstagramSection() {
+  return (
+    <section className="instagram-section">
+      <div className="instagram-inner">
+        <div className="instagram-header" data-animate>
+          <h2>Follow Along on <span>Instagram</span></h2>
+          <p>Behind the blooms, workshop moments, and fresh arrangements — all on Instagram.</p>
+          <a href="https://instagram.com/bloombergflowersbyjessie" target="_blank" rel="noopener noreferrer" className="instagram-handle">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+            @bloombergflowersbyjessie
+          </a>
+        </div>
+        <div className="instagram-grid" data-animate>
+          {instaPhotos.map((src, i) => (
+            <a key={i} href="https://instagram.com/bloombergflowersbyjessie" target="_blank" rel="noopener noreferrer" className="instagram-tile">
+              <Image src={src} alt="BloomBerg Flowers on Instagram" fill sizes="(max-width: 640px) 50vw, 33vw" style={{ objectFit: 'cover' }} />
+              <div className="instagram-tile-overlay">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="white"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+              </div>
+            </a>
+          ))}
+        </div>
+        <div style={{ textAlign: 'center', marginTop: '2rem' }} data-animate>
+          <a href="https://instagram.com/bloombergflowersbyjessie" target="_blank" rel="noopener noreferrer" className="btn-outline-green">
+            View Instagram
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+        </div>
+      </div>
+    </section>
+  )
+}
+
+// ─── Contact Form ─────────────────────────────────────────────────────────────
+function ContactForm() {
+  const [sent, setSent] = useState(false)
+  const [form, setForm] = useState({ name: '', email: '', occasion: '', date: '', message: '' })
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
+    setForm(prev => ({ ...prev, [e.target.name]: e.target.value }))
+  }
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault()
+    const subject = encodeURIComponent(`New Inquiry from ${form.name}${form.occasion ? ' — ' + form.occasion : ''}`)
+    const body = encodeURIComponent(
+      `Name: ${form.name}\nEmail: ${form.email}\nOccasion: ${form.occasion || 'Not specified'}\nDate: ${form.date || 'Not specified'}\n\nMessage:\n${form.message}`
+    )
+    window.location.href = `mailto:jessie@bloombergflowers.com?subject=${subject}&body=${body}`
+    setSent(true)
+  }
+
+  if (sent) {
+    return (
+      <div className="contact-form-success">
+        <div className="success-icon">🌸</div>
+        <h3>Your message is on its way!</h3>
+        <p>Jessie will be in touch soon. In the meantime, follow along on Instagram.</p>
+      </div>
+    )
+  }
+
+  return (
+    <form className="contact-form" onSubmit={handleSubmit}>
+      <div className="form-row">
+        <div className="form-group">
+          <label htmlFor="name">Your Name</label>
+          <input id="name" name="name" type="text" placeholder="Jane Smith" required value={form.name} onChange={handleChange} />
+        </div>
+        <div className="form-group">
+          <label htmlFor="email">Email Address</label>
+          <input id="email" name="email" type="email" placeholder="jane@example.com" required value={form.email} onChange={handleChange} />
+        </div>
+      </div>
+      <div className="form-row">
+        <div className="form-group">
+          <label htmlFor="occasion">What are you looking for?</label>
+          <select id="occasion" name="occasion" value={form.occasion} onChange={handleChange}>
+            <option value="">Select an option</option>
+            <option>Custom Bouquet</option>
+            <option>Centerpiece</option>
+            <option>Workshop / Class</option>
+            <option>Event Florals</option>
+            <option>Special Occasion</option>
+            <option>Other</option>
+          </select>
+        </div>
+        <div className="form-group">
+          <label htmlFor="date">Event Date (if applicable)</label>
+          <input id="date" name="date" type="date" value={form.date} onChange={handleChange} />
+        </div>
+      </div>
+      <div className="form-group">
+        <label htmlFor="message">Tell Jessie about your vision</label>
+        <textarea id="message" name="message" rows={5} placeholder="Colors, mood, occasion, size — any detail helps!" required value={form.message} onChange={handleChange} />
+      </div>
+      <button type="submit" className="form-submit">
+        Send Message
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </button>
+    </form>
+  )
+}
 
 // ─── Floating Contact Button ─────────────────────────────────────────────────
 function FloatingContact() {
@@ -132,15 +300,16 @@ function FloatingContact() {
   )
 }
 
-// ─── Main Page ───────────────────────────────────────────────────────────────
+// ─── Services ────────────────────────────────────────────────────────────────
 const services = [
-  { title: 'Bouquets', desc: 'One-of-a-kind bouquets built around your vision. No cookie-cutter designs — every piece is crafted for you.', link: '/gallery/bouquets', img: '/assets/bouquet/IMG_4142.jpeg' },
+  { title: 'Bouquets', desc: "One-of-a-kind bouquets built around your vision. No cookie-cutter designs — every piece is crafted for you.", link: '/gallery/bouquets', img: '/assets/bouquet/IMG_4142.jpeg' },
   { title: 'Centerpieces', desc: 'Statement table arrangements for events, holidays, and everyday elegance.', link: '/gallery/centerpieces', img: '/assets/centerpiece/12df46d1-a3a0-4f5f-8b78-9a9be57cda44.jpeg' },
-  { title: 'Special Occasions', desc: 'Birthdays, anniversaries, just because — big, bold bouquets for all of life\'s moments.', link: '/gallery/special-occasions', img: '/assets/bouquets-with-people/DSC_4162.JPG' },
+  { title: 'Special Occasions', desc: "Birthdays, anniversaries, just because — big, bold bouquets for all of life's moments.", link: '/gallery/special-occasions', img: '/assets/bouquets-with-people/DSC_4162.JPG' },
   { title: 'Workshops', desc: 'Hands-on floral design classes for adults and kids. Great for groups, parties, or just because.', link: '/gallery/workshops', img: '/assets/flower-party/DSC_3881.jpg' },
   { title: 'Events', desc: 'Circus, non-profits, sports, holidays — whatever the occasion, we bring the blooms.', link: '/gallery/events', img: '/assets/events/IMG_9363.jpeg' },
 ]
 
+// ─── Main Page ───────────────────────────────────────────────────────────────
 export default function Home() {
   useScrollAnimation()
 
@@ -159,7 +328,7 @@ export default function Home() {
               <span>Workshops</span><span className="dot" />
               <span>Events</span><span className="dot" />
               <span>Sarasota, FL</span><span className="dot" />
-              <span>Modern & Fun</span><span className="dot" />
+              <span>Modern &amp; Fun</span><span className="dot" />
             </div>
           ))}
         </div>
@@ -174,7 +343,7 @@ export default function Home() {
           </div>
           <div className="services-grid">
             {services.map((s, i) => (
-              <div key={i} className="service-card service-card-photo" style={{ backgroundImage: `url('${s.img}')` }}>
+              <div key={i} className={`service-card service-card-photo${i === 4 ? ' service-card-wide' : ''}`} style={{ backgroundImage: `url('${s.img}')` }}>
                 <div className="service-card-overlay">
                   <h3>{s.title}</h3>
                   <p>{s.desc}</p>
@@ -215,23 +384,7 @@ export default function Home() {
             <h2>What People <span>Say</span></h2>
             <p>Real flowers, real stories, real moments.</p>
           </div>
-          <div className="testimonials-grid">
-            {testimonials.map((t, i) => (
-              <div key={i} className="testimonial-card" data-animate style={{ transitionDelay: `${i * 120}ms` }}>
-                <div className="testimonial-quote">
-                  <svg width="28" height="28" viewBox="0 0 24 24" fill="var(--green)" opacity="0.4">
-                    <path d="M3 21c3 0 7-1 7-8V5c0-1.25-.756-2.017-2-2H4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2 1 0 1 0 1 1v1c0 1-1 2-2 2s-1 .008-1 1.031V20c0 1 0 1 1 1z"/>
-                    <path d="M15 21c3 0 7-1 7-8V5c0-1.25-.757-2.017-2-2h-4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2h.75c0 2.25.25 4-2.75 4v3c0 1 0 1 1 1z"/>
-                  </svg>
-                  <p>{t.quote}</p>
-                </div>
-                <div className="testimonial-author">
-                  <span className="testimonial-name">{t.author}</span>
-                  <span className="testimonial-occasion">{t.occasion}</span>
-                </div>
-              </div>
-            ))}
-          </div>
+          <TestimonialsCarousel />
         </div>
       </section>
 
@@ -247,28 +400,16 @@ export default function Home() {
               As I grew older, I always kept a small garden, growing vegetables, tending plants, and surrounding myself with flowers. Every home I&apos;ve lived in has been filled with life: orchids on the windowsill, greenery in every corner, and blooms that brought warmth into our space. Along the way, I carried a dream in my heart—to one day have my own flower shop and flower farm, where I could create bouquets using flowers and greens I&apos;d grown myself. In 2017, we moved to the United States, and slowly, that dream began to take shape.
             </p>
             <p>
-              In 2022, what started as a simple birthday gathering with friends turned into something truly meaningful. We shared wine, laughter, and created flower arrangements together. It was a peaceful, joyful evening, one that we didn&apos;t want to end. So we continued, gathering once a month to create, connect, and celebrate. Soon, our daughters joined us, making their own small arrangements from leftover flowers. One of them said, &ldquo;What if you make something for the girls too?&rdquo; And just like that, it became a mother-and-daughter tradition, celebrating seasons, holidays, and special moments through flowers. From that moment, BloomBerg Flowers was born—a space where connection, creativity, and nature come together.
+              In 2022, what started as a simple birthday gathering with friends turned into something truly meaningful. We shared wine, laughter, and created flower arrangements together. It was a peaceful, joyful evening, one that we didn&apos;t want to end. So we continued, gathering once a month to create, connect, and celebrate. Soon, our daughters joined us, making their own small arrangements from leftover flowers. One of them said, &ldquo;What if you make something for the girls too?&rdquo; And just like that, it became a mother-and-daughter tradition. From that moment, BloomBerg Flowers was born.
             </p>
             <p>
               Today, every arrangement I create carries a piece of that journey. Each bouquet is crafted with intention, inspired by my roots, and designed to bring beauty, warmth, and joy into every home.
             </p>
             <div className="about-details">
-              <div className="about-detail">
-                <div className="icon">📍</div>
-                <span>Downtown Sarasota, By Appointment</span>
-              </div>
-              <div className="about-detail">
-                <div className="icon">📞</div>
-                <span>(941) 424-5880</span>
-              </div>
-              <div className="about-detail">
-                <div className="icon">✉️</div>
-                <span>jessie@bloombergflowers.com</span>
-              </div>
-              <div className="about-detail">
-                <div className="icon">⏰</div>
-                <span>By Appointment</span>
-              </div>
+              <div className="about-detail"><div className="icon">📍</div><span>Downtown Sarasota, By Appointment</span></div>
+              <div className="about-detail"><div className="icon">📞</div><span>(941) 424-5880</span></div>
+              <div className="about-detail"><div className="icon">✉️</div><span>jessie@bloombergflowers.com</span></div>
+              <div className="about-detail"><div className="icon">⏰</div><span>By Appointment</span></div>
             </div>
           </div>
           <div className="about-image" data-animate>
@@ -276,6 +417,9 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      {/* Instagram */}
+      <InstagramSection />
 
       {/* CTA Banner */}
       <div className="cta-banner" data-animate>
@@ -294,37 +438,38 @@ export default function Home() {
             <h2>Get in <span>Touch</span></h2>
             <p>Reach out to discuss your arrangement, event, or workshop.</p>
           </div>
-          <div className="contact-grid">
-            <div className="contact-card">
-              <h4>Phone</h4>
-              <p><a href="tel:+19414245880">(941) 424-5880</a></p>
+          <div className="contact-layout">
+            <div className="contact-info-col">
+              <div className="contact-info-item">
+                <div className="contact-info-icon">📞</div>
+                <div><h4>Phone</h4><a href="tel:+19414245880">(941) 424-5880</a></div>
+              </div>
+              <div className="contact-info-item">
+                <div className="contact-info-icon">✉️</div>
+                <div><h4>Email</h4><a href="mailto:jessie@bloombergflowers.com">jessie@bloombergflowers.com</a></div>
+              </div>
+              <div className="contact-info-item">
+                <div className="contact-info-icon">📍</div>
+                <div><h4>Location</h4><p>Downtown Sarasota, FL<br />By Appointment</p></div>
+              </div>
+              <div className="contact-info-item">
+                <div className="contact-info-icon">🕐</div>
+                <div><h4>Hours</h4><p>By Appointment<br />Reach out anytime</p></div>
+              </div>
+              <div className="contact-social-links">
+                <a href="https://instagram.com/bloombergflowersbyjessie" target="_blank" rel="noopener noreferrer" className="social-link">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+                  Instagram
+                </a>
+                <a href="https://www.facebook.com/bloombergflowersbyjessie" target="_blank" rel="noopener noreferrer" className="social-link">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+                  Facebook
+                </a>
+              </div>
             </div>
-            <div className="contact-card">
-              <h4>Email</h4>
-              <p><a href="mailto:jessie@bloombergflowers.com">jessie@bloombergflowers.com</a></p>
+            <div className="contact-form-col" data-animate>
+              <ContactForm />
             </div>
-            <div className="contact-card">
-              <h4>Location</h4>
-              <p>Downtown Sarasota<br />By Appointment</p>
-            </div>
-            <div className="contact-card">
-              <h4>Hours</h4>
-              <p>By Appointment</p>
-            </div>
-          </div>
-          <div className="social-links">
-            <a href="https://instagram.com/bloombergflowersbyjessie" target="_blank" rel="noopener noreferrer" className="social-link">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
-              Instagram
-            </a>
-            <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="social-link">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
-              Facebook
-            </a>
-            <a href="https://x.com" target="_blank" rel="noopener noreferrer" className="social-link">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
-              X
-            </a>
           </div>
         </div>
       </section>
