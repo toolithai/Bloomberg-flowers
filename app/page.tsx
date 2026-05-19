@@ -110,7 +110,7 @@ const testimonials = [
     occasion: 'Custom Arrangements',
   },
   {
-    quote: 'Spending time at Jessie\'s house for our flower-arranging sessions was always something special. She created the warmest, most inviting space—one where creativity felt effortless and everyone, no matter their skill level, felt welcome. It never mattered if you were a beginner or had two left thumbs; Jessie guided us with patience, joy, and a spark of inspiration that made every visit unforgettable. What made it truly magical was the creativity without limits. We didn\'t just make bouquets—we made art. Arrangements in watermelons, pumpkins, and even sleds. Designs tucked into cowboy hats, teapots, and vegetables. Beautiful pieces built with succulents, orchids, spices, and anything else Jessie dreamed up. Every project was unique, fun, and full of personality.',
+    quote: "Jessie's flower-arranging sessions were always something special. She created the warmest, most inviting space — where creativity felt effortless and everyone, regardless of skill level, felt welcome. With patience, joy, and genuine inspiration, she made every visit unforgettable. What made it truly magical was the creativity without limits. We didn't just make bouquets — we made art. Arrangements in watermelons, pumpkins, cowboy hats, and teapots. Designs built with succulents, orchids, spices, and whatever else Jessie dreamed up. Every project was unique, fun, and full of personality.",
     author: 'Silvia P.',
     occasion: 'Flower Arranging Sessions',
   },
