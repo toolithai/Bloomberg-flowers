@@ -1,12 +1,13 @@
 'use client'
 
-import { useState, useEffect, useCallback } from 'react'
+import { useState, useEffect, useCallback, Suspense } from 'react'
 import { useSearchParams } from 'next/navigation'
 import Link from 'next/link'
 import Image from 'next/image'
 import { galleryCategories, type PhotoItem } from '@/data/photos'
 
-export default function Gallery() {
+// Inner component uses useSearchParams, must be wrapped in Suspense
+function GalleryContent() {
   const searchParams = useSearchParams()
   const categoryParam = searchParams.get('category')
   const initialCategory = galleryCategories.find(c => c.id === categoryParam)?.id ?? galleryCategories[0].id
@@ -51,27 +52,7 @@ export default function Gallery() {
   }, [lightbox, goNext, goPrev])
 
   return (
-    <div className="gallery-page">
-      {/* Nav */}
-      <nav className="gallery-nav">
-        <Link href="/" className="gallery-nav-logo">
-          <Image src="/assets/logo-files/header2.png" alt="BloomBerg Flowers" width={180} height={50} style={{ objectFit: 'contain', height: 'auto' }} />
-        </Link>
-        <ul className="gallery-nav-links">
-          <li><Link href="/gallery">Gallery</Link></li>
-          <li><a href="/#services">Services</a></li>
-          <li><a href="/#about">About</a></li>
-          <li><a href="/#contact">Contact</a></li>
-        </ul>
-        <a href="tel:+19414245880" className="gallery-nav-cta">Message Us</a>
-      </nav>
-
-      {/* Page header */}
-      <div className="gallery-page-header">
-        <h1>Gallery</h1>
-        <p>Browse our work — bouquets, centerpieces, events, workshops, and more.</p>
-      </div>
-
+    <>
       {/* Category tabs */}
       <div className="gallery-tabs">
         {galleryCategories.map(cat => (
@@ -125,6 +106,46 @@ export default function Gallery() {
           </div>
         </div>
       )}
+    </>
+  )
+}
+
+export default function Gallery() {
+  return (
+    <div className="gallery-page">
+      {/* Nav */}
+      <nav className="gallery-nav">
+        <Link href="/" className="gallery-nav-logo">
+          <Image src="/assets/logo-files/header2.png" alt="BloomBerg Flowers" width={180} height={50} style={{ objectFit: 'contain', height: 'auto' }} />
+        </Link>
+        <ul className="gallery-nav-links">
+          <li><Link href="/gallery">Gallery</Link></li>
+          <li><a href="/#services">Services</a></li>
+          <li><a href="/#about">About</a></li>
+          <li><a href="/#contact">Contact</a></li>
+        </ul>
+        <a href="tel:+19414245880" className="gallery-nav-cta">Message Us</a>
+      </nav>
+
+      {/* Page header */}
+      <div className="gallery-page-header">
+        <h1>Gallery</h1>
+        <p>Browse our work — bouquets, centerpieces, events, workshops, and more.</p>
+      </div>
+
+      {/* Suspense boundary required by Next.js 14 for useSearchParams */}
+      <Suspense fallback={
+        <div className="gallery-tabs">
+          {galleryCategories.map(cat => (
+            <button key={cat.id} className="gallery-tab">
+              {cat.label}
+              <span className="tab-count">{cat.photos.length > 0 ? cat.photos.length : '—'}</span>
+            </button>
+          ))}
+        </div>
+      }>
+        <GalleryContent />
+      </Suspense>
     </div>
   )
 }
