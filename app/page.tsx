@@ -93,22 +93,31 @@ const steps = [
 ]
 
 // ─── Testimonials ────────────────────────────────────────────────────────────
-// TODO: Replace with real quotes from Jessie's customers
 const testimonials = [
   {
-    quote: 'Jessie turned my daughter\'s graduation party into something unforgettable. The centerpiece she made was the centerpiece everyone talked about — not just another grocery store bouquet.',
-    author: 'Maria R.',
-    occasion: 'Graduation Party',
+    quote: 'We had the pleasure of working with Jessie for two large scale events, and she was absolutely wonderful to work with. From start to finish, she made the entire process easy and seamless. The centerpiece and bouquets she created were beautiful and truly elevated the look and feel of both events. I highly recommend her and look forward to working with her again in the future.',
+    author: 'Megan B.',
+    occasion: 'Large Scale Events',
   },
   {
-    quote: 'I had a vision in my head and she just got it. Walked in with flowers I didn\'t even know I wanted. That\'s her gift — she sees what you can\'t quite describe.',
-    author: 'James T.',
-    occasion: 'Anniversary Gift',
+    quote: "Jessie's work consistently goes above and beyond, creating beautiful, meaningful pieces for every occasion. She is professional, caring, always on time, and incredibly accommodating when it comes to dates and custom requests. I'm truly appreciative of everything Jessie has created for us—her work has represented our events beautifully every time.",
+    author: 'Angel H.',
+    occasion: 'Custom Requests',
   },
   {
-    quote: 'We use BloomBerg for all our nonprofit events. Professional, creative, and she works with our budget every single time. Sarasota is lucky to have her.',
-    author: 'Nancy G.',
-    occasion: 'Teen Court Justice & Jammies',
+    quote: 'Jessie was so easy to work with! She made beautiful custom arrangements which perfectly coordinated with my table size, linens, and style. Her flowers lasted an extremely long time, even though we used them on an outdoor patio. I received lots of compliments on her arrangements and I would highly recommend her!',
+    author: 'Jennifer K.',
+    occasion: 'Custom Arrangements',
+  },
+  {
+    quote: 'Spending time at Jessie\'s house for our flower-arranging sessions was always something special. She created the warmest, most inviting space—one where creativity felt effortless and everyone, no matter their skill level, felt welcome. It never mattered if you were a beginner or had two left thumbs; Jessie guided us with patience, joy, and a spark of inspiration that made every visit unforgettable. What made it truly magical was the creativity without limits. We didn\'t just make bouquets—we made art. Arrangements in watermelons, pumpkins, and even sleds. Designs tucked into cowboy hats, teapots, and vegetables. Beautiful pieces built with succulents, orchids, spices, and anything else Jessie dreamed up. Every project was unique, fun, and full of personality.',
+    author: 'Silvia P.',
+    occasion: 'Flower Arranging Sessions',
+  },
+  {
+    quote: "Jessie's flower arranging classes have been one of the most enriching and rewarding experiences I've had over the past two years. From the moment you step into her world, you're met with a sense of warmth, creativity, and effortless elegance that defines every session. Jessie has an extraordinary eye for detail and an innate ability to guide and inspire, transforming each arrangement into something truly refined and beautiful. Beyond the artistry, what makes this experience exceptional is the sense of connection she cultivates. The classes have become a space for meaningful relationships, where like-minded people come together and leave as lasting friends. It's a rare blend of creativity, community, and elevated experience—I couldn't recommend Jessie's classes more highly.",
+    author: 'Ilana',
+    occasion: 'Flower Arranging Classes',
   },
 ]
 
