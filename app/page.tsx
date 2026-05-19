@@ -388,6 +388,19 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Instagram */}
+      <InstagramSection />
+
+      {/* CTA Banner */}
+      <div className="cta-banner" data-animate>
+        <h2>Ready to Create Something Beautiful?</h2>
+        <p>Let&apos;s talk about your vision.</p>
+        <a href="#contact" className="btn-dark">
+          Get in Touch
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+      </div>
+
       {/* About */}
       <section id="about" className="about-section">
         <div className="about-inner">
@@ -417,19 +430,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-
-      {/* Instagram */}
-      <InstagramSection />
-
-      {/* CTA Banner */}
-      <div className="cta-banner" data-animate>
-        <h2>Ready to Create Something Beautiful?</h2>
-        <p>Let&apos;s talk about your vision.</p>
-        <a href="#contact" className="btn-dark">
-          Get in Touch
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-        </a>
-      </div>
 
       {/* Contact */}
       <section id="contact" className="contact-section">
