@@ -241,10 +241,16 @@ export default function Home() {
           <div className="about-text" data-animate>
             <h2>Hi, I&apos;m <span>Jessie</span></h2>
             <p>
-              Flowers have always been my language. I started BloomBerg Flowers because I believe everyone deserves a little beauty in their life — whether it&apos;s a bouquet for your kitchen table, a showstopper for your event, or a memory you make in one of my workshops.
+              I grew up on a sugarcane plantation in the Philippines, where life was deeply rooted in nature. My grandmother, Lola Josefina, was a gifted farmer who filled our home with everything we needed—from fresh fruits and vegetables to healing herbs. She taught me that plants are more than something you grow… they are something you nurture with love. By her side, I learned patience, care, and the quiet beauty of letting nature unfold. That is where my green thumb began.
             </p>
             <p>
-              My style? Modern, fun, and always a little unexpected. I don&apos;t do cookie-cutter. Every arrangement is built around you — your vibe, your story, your moment.
+              As I grew older, I always kept a small garden, growing vegetables, tending plants, and surrounding myself with flowers. Every home I&apos;ve lived in has been filled with life: orchids on the windowsill, greenery in every corner, and blooms that brought warmth into our space. Along the way, I carried a dream in my heart—to one day have my own flower shop and flower farm, where I could create bouquets using flowers and greens I&apos;d grown myself. In 2017, we moved to the United States, and slowly, that dream began to take shape.
+            </p>
+            <p>
+              In 2022, what started as a simple birthday gathering with friends turned into something truly meaningful. We shared wine, laughter, and created flower arrangements together. It was a peaceful, joyful evening, one that we didn&apos;t want to end. So we continued, gathering once a month to create, connect, and celebrate. Soon, our daughters joined us, making their own small arrangements from leftover flowers. One of them said, &ldquo;What if you make something for the girls too?&rdquo; And just like that, it became a mother-and-daughter tradition, celebrating seasons, holidays, and special moments through flowers. From that moment, BloomBerg Flowers was born—a space where connection, creativity, and nature come together.
+            </p>
+            <p>
+              Today, every arrangement I create carries a piece of that journey. Each bouquet is crafted with intention, inspired by my roots, and designed to bring beauty, warmth, and joy into every home.
             </p>
             <div className="about-details">
               <div className="about-detail">
